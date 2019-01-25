@@ -46,7 +46,7 @@ module QC
     def disconnect
       @mutex.synchronize do
         begin
-          connection.close
+          @connection.close
         rescue => e
           QC.log(:at => 'disconnect', :error => e.message)
         end
